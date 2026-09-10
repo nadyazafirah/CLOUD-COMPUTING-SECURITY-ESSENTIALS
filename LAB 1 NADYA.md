@@ -59,10 +59,10 @@ curl http://localhost:4566/_localstack/health
 ```
 
 **Docker Container Status:**
-![Docker Container Status](sudo%20docker%20ps.png)
+![Docker Container Status](EVIDENCE%20LAB%201/sudo%20docker%20ps.png)
 
 **LocalStack Health Check Output:**
-![LocalStack Health Check](localstack%20health.png)
+![LocalStack Health Check](EVIDENCE%20LAB%201/localstack%20health.png)
 
 #### 2. AWS CLI Configuration & Identity Verification
 The AWS CLI was configured with dummy credentials and directed to `http://localhost:4566`. Initial identity check confirmed execution under root account credentials.
@@ -78,7 +78,7 @@ sudo aws --endpoint-url=http://localhost:4566 sts get-caller-identity
 ```
 
 **STS Get-Caller-Identity Output:**
-![STS Get-Caller-Identity Output](dummy%20credentials.png)
+![STS Get-Caller-Identity Output](EVIDENCE%20LAB%201/dummy%20credentials.png)
 
 ```json
 {
@@ -128,10 +128,10 @@ aws $EP iam get-group --group-name Admins
 ```
 
 **Creating Group & Personal Admin User:**
-![Create Admin Group and User](create%20group.png)
+![Create Admin Group and User](EVIDENCE%20LAB%201/create%20group.png)
 
 **Verifying Group Membership (`get-group`):**
-![Verify Group Membership](#%202.3%20Put%20the%20user%20in%20the%20group%20#%202.4%20Verify%20the%20membership.png)
+![Verify Group Membership](EVIDENCE%20LAB%201/%23%202.3%20Put%20the%20user%20in%20the%20group%20%23%202.4%20Verify%20the%20membership.png)
 
 ---
 
@@ -152,10 +152,10 @@ aws $EP iam list-attached-user-policies --user-name Analyst_NADYA
 ```
 
 **Creating Analyst User:**
-![Create Analyst User](#%203.1%20Create%20a%20read-only%20user.png)
+![Create Analyst User](EVIDENCE%20LAB%201/%23%203.1%20Create%20a%20read-only%20user.png)
 
 **Listing Attached User Policies (`list-attached-user-policies`):**
-![List Attached User Policies](#%203.3%20List%20what%20the%20user%20can%20do.png)
+![List Attached User Policies](EVIDENCE%20LAB%201/%23%203.3%20List%20what%20the%20user%20can%20do.png)
 
 #### Blast-Radius Reduction Analysis:
 If the `Analyst_NADYA` account credentials were stolen or compromised:
@@ -181,7 +181,7 @@ aws $EP iam update-access-key --user-name Analyst_NADYA \
 ```
 
 **Access Key Creation, Listing, and Deactivation:**
-![Task 4 Credential Hygiene](Task%204%20%E2%80%94%20Credential%20Hygiene%20%26%20Access%20Keys.png)
+![Task 4 Credential Hygiene](EVIDENCE%20LAB%201/Task%204%20%E2%80%94%20Credential%20Hygiene%20%26%20Access%20Keys.png)
 
 ---
 
@@ -202,7 +202,7 @@ sudo kubectl get nodes
 ```
 
 **Kubernetes Cluster Initialization (`kind`):**
-![Create Local Kubernetes Cluster](#%20Create%20a%20throwaway%20cluster.png)
+![Create Local Kubernetes Cluster](EVIDENCE%20LAB%201/%23%20Create%20a%20throwaway%20cluster.png)
 
 ---
 
@@ -219,7 +219,7 @@ sudo kubectl get namespaces
 ```
 
 **Creating `dev` and `prod` Namespaces:**
-![Create Namespaces](Task%205%20%E2%80%94%20Separate%20Environments%20with%20Namespaces.png)
+![Create Namespaces](EVIDENCE%20LAB%201/Task%205%20%E2%80%94%20Separate%20Environments%20with%20Namespaces.png)
 
 ---
 
@@ -240,7 +240,7 @@ sudo kubectl create rolebinding dev-user-binding -n dev \
 ```
 
 **Creating ServiceAccount, Role, and RoleBinding:**
-![Define Role and RoleBinding](Task%206%20%E2%80%94%20Define%20a%20Role%20and%20Bind%20It%20(Least%20Privilege).png)
+![Define Role and RoleBinding](EVIDENCE%20LAB%201/Task%206%20%E2%80%94%20Define%20a%20Role%20and%20Bind%20It%20(Least%20Privilege).png)
 
 ---
 
@@ -262,7 +262,7 @@ sudo kubectl auth can-i list pods -n prod --as=$SA
 ```
 
 **Testing RBAC Permissions (`kubectl auth can-i`):**
-![Test Access Control Boundaries](Task%207%20%E2%80%94%20Test%20That%20Access%20Control%20Works.png)
+![Test Access Control Boundaries](EVIDENCE%20LAB%201/Task%207%20%E2%80%94%20Test%20That%20Access%20Control%20Works.png)
 
 #### Authentication vs. Authorization Analysis:
 * **Authentication (AuthN):** In all three tests, the API server successfully authenticated the caller identity as `system:serviceaccount:dev:dev-user`.
@@ -316,7 +316,7 @@ sudo kubectl get rolebinding dev-user-binding -n dev -o yaml
 ```
 
 **Terminal Proof Screenshot:**
-![Prove Cluster RBAC is in Place](prove%20cluster%20RBAC%20is%20in%20place.png)
+![Prove Cluster RBAC is in Place](EVIDENCE%20LAB%201/prove%20cluster%20RBAC%20is%20in%20place.png)
 
 **YAML Manifest Output:**
 ```yaml
