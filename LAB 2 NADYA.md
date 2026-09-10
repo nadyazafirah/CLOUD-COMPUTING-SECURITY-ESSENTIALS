@@ -357,16 +357,16 @@ wiped
 
 | Screenshot File | Associated Task | Validation Summary |
 | :--- | :--- | :--- |
-| [`Create a cluster with the default CNI disabled.png`](file:///c:/Users/User/Documents/ZAFIRAH/PROJEK%20ZAFIRAH/UNIKL/SCHOOL%20WORK/CLOUD%20COMPUTING/LAB%202/EVIDENCE/Create%20a%20cluster%20with%20the%20default%20CNI%20disabled.png) | Setup | Verified initial cluster spin-up without standard CNI. |
-| [`install Calico.png`](file:///c:/Users/User/Documents/ZAFIRAH/PROJEK%20ZAFIRAH/UNIKL/SCHOOL%20WORK/CLOUD%20COMPUTING/LAB%202/EVIDENCE/install%20Calico.png) | Setup | Project Calico CNI CRDs & DaemonSet applied successfully. |
-| [`Task 1 — Two Tenants on One Cluster.png`](file:///c:/Users/User/Documents/ZAFIRAH/PROJEK%20ZAFIRAH/UNIKL/SCHOOL%20WORK/CLOUD%20COMPUTING/LAB%202/EVIDENCE/Task%201%20—%20Two%20Tenants%20on%20One%20Cluster.png) | Task 1 | Created `tenant-a` & `tenant-b` deployments and services. |
-| [`Task 2 — Observe the Default-Open Risk.png`](file:///c:/Users/User/Documents/ZAFIRAH/PROJEK%20ZAFIRAH/UNIKL/SCHOOL%20WORK/CLOUD%20COMPUTING/LAB%202/EVIDENCE/Task%202%20—%20Observe%20the%20Default-Open%20Risk.png) | Task 2 | Demonstrated unsegmented cross-tenant connection (`HTTP 200`). |
-| [`Task 3 — Contain the Noisy Neighbour (Resource Quotas).png`](file:///c:/Users/User/Documents/ZAFIRAH/PROJEK%20ZAFIRAH/UNIKL/SCHOOL%20WORK/CLOUD%20COMPUTING/LAB%202/EVIDENCE/Task%203%20—%20Contain%20the%20Noisy%20Neighbour%20(Resource%20Quotas).png) | Task 3 | Applied CPU, Memory, and Pod instance quota to `tenant-a`. |
-| [`Task 4 — Default-Deny Network Isolation.png`](file:///c:/Users/User/Documents/ZAFIRAH/PROJEK%20ZAFIRAH/UNIKL/SCHOOL%20WORK/CLOUD%20COMPUTING/LAB%202/EVIDENCE/Task%204%20—%20Default-Deny%20Network%20Isolation.png) | Task 4 | Applied ingress default-deny NetworkPolicy & validated block. |
-| [`Create a secret in each tenant.png`](file:///c:/Users/User/Documents/ZAFIRAH/PROJEK%20ZAFIRAH/UNIKL/SCHOOL%20WORK/CLOUD%20COMPUTING/LAB%202/EVIDENCE/Create%20a%20secret%20in%20each%20tenant.png) | Task 5 | Provisioned isolated Kubernetes secret resources in both tenants. |
-| [`A service account scoped to tenant-a only.png`](file:///c:/Users/User/Documents/ZAFIRAH/PROJEK%20ZAFIRAH/UNIKL/SCHOOL%20WORK/CLOUD%20COMPUTING/LAB%202/EVIDENCE/A%20service%20account%20scoped%20to%20tenant-a%20only.png) | Task 5 | Proved RBAC secret isolation via `auth can-i` checks (`yes` vs `no`). |
-| [`Create a file, delete it normally, then show the bytes may persist.png`](file:///c:/Users/User/Documents/ZAFIRAH/PROJEK%20ZAFIRAH/UNIKL/SCHOOL%20WORK/CLOUD%20COMPUTING/LAB%202/EVIDENCE/Create%20a%20file,%20delete%20it%20normally,%20then%20show%20the%20bytes%20may%20persist.png) | Task 6 | Demonstrated standard file unlinking remanence risk on raw storage. |
-| [`Secure wipe overwrite before delete (shred).png`](file:///c:/Users/User/Documents/ZAFIRAH/PROJEK%20ZAFIRAH/UNIKL/SCHOOL%20WORK/CLOUD%20COMPUTING/LAB%202/EVIDENCE/Secure%20wipe%20overwrite%20before%20delete%20(shred).png) | Task 6 | Verified zero-fill block overwrite sanitization prior to deletion. |
+| [Create a cluster with the default CNI disabled.png](EVIDENCE/Create%20a%20cluster%20with%20the%20default%20CNI%20disabled.png) | Setup | Verified initial cluster spin-up without standard CNI. |
+| [install Calico.png](EVIDENCE/install%20Calico.png) | Setup | Project Calico CNI CRDs & DaemonSet applied successfully. |
+| [Task 1 — Two Tenants on One Cluster.png](EVIDENCE/Task%201%20—%20Two%20Tenants%20on%20One%20Cluster.png) | Task 1 | Created `tenant-a` & `tenant-b` deployments and services. |
+| [Task 2 — Observe the Default-Open Risk.png](EVIDENCE/Task%202%20—%20Observe%20the%20Default-Open%20Risk.png) | Task 2 | Demonstrated unsegmented cross-tenant connection (`HTTP 200`). |
+| [Task 3 — Contain the Noisy Neighbour (Resource Quotas).png](EVIDENCE/Task%203%20—%20Contain%20the%20Noisy%20Neighbour%20(Resource%20Quotas).png) | Task 3 | Applied CPU, Memory, and Pod instance quota to `tenant-a`. |
+| [Task 4 — Default-Deny Network Isolation.png](EVIDENCE/Task%204%20—%20Default-Deny%20Network%20Isolation.png) | Task 4 | Applied ingress default-deny NetworkPolicy & validated block. |
+| [Create a secret in each tenant.png](EVIDENCE/Create%20a%20secret%20in%20each%20tenant.png) | Task 5 | Provisioned isolated Kubernetes secret resources in both tenants. |
+| [A service account scoped to tenant-a only.png](EVIDENCE/A%20service%20account%20scoped%20to%20tenant-a%20only.png) | Task 5 | Proved RBAC secret isolation via `auth can-i` checks (`yes` vs `no`). |
+| [Create a file, delete it normally, then show the bytes may persist.png](EVIDENCE/Create%20a%20file,%20delete%20it%20normally,%20then%20show%20the%20bytes%20may%20persist.png) | Task 6 | Demonstrated standard file unlinking remanence risk on raw storage. |
+| [Secure wipe overwrite before delete (shred).png](EVIDENCE/Secure%20wipe%20overwrite%20before%20delete%20(shred).png) | Task 6 | Verified zero-fill block overwrite sanitization prior to deletion. |
 
 ---
 
