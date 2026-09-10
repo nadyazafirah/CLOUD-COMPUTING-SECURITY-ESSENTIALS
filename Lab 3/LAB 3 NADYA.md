@@ -49,10 +49,10 @@ diff record.txt record.dec.txt && echo 'MATCH: decryption successful'
 #### Terminal Execution & Evidence
 
 - **Encryption & Ciphertext Verification:**  
-  ![Task 1 - Encryption Output](Lab%203/EVIDENCE/Task%201%20—%20Symmetric%20Encryption%20(Data%20at%20Rest).png)
+  ![Task 1 - Encryption Output](EVIDENCE/Task%201%20—%20Symmetric%20Encryption%20(Data%20at%20Rest).png)
 
 - **Decryption & Match Confirmation:**  
-  ![Task 1 - Decryption Match](Lab%203/EVIDENCE/Task%201%20-%20%23%20Decrypt%20back.png)
+  ![Task 1 - Decryption Match](EVIDENCE/Task%201%20-%20%23%20Decrypt%20back.png)
 
 #### Terminal Output Captured
 ```text
@@ -98,7 +98,7 @@ openssl dgst -sha256 -verify public.pem -signature record.sig record.txt
 
 #### Terminal Execution & Evidence
 
-![Task 2 - Asymmetric & Signatures](Lab%203/EVIDENCE/Task%202%20—%20Asymmetric%20Encryption%20%26%20Digital%20Signatures.png)
+![Task 2 - Asymmetric & Signatures](EVIDENCE/Task%202%20—%20Asymmetric%20Encryption%20%26%20Digital%20Signatures.png)
 
 #### Terminal Output Captured
 ```text
@@ -137,10 +137,10 @@ curl -k https://localhost:8443/record.txt
 #### Terminal Execution & Evidence
 
 - **Self-Signed Certificate Generation:**  
-  ![Task 3 - Certificate Generation](Lab%203/EVIDENCE/Task%203%20-%20%23%20Generate%20a%20self-signed%20certificate.png)
+  ![Task 3 - Certificate Generation](EVIDENCE/Task%203%20-%20%23%20Generate%20a%20self-signed%20certificate.png)
 
 - **Docker Container & HTTPS Request:**  
-  ![Task 3 - TLS Execution](Lab%203/EVIDENCE/Task%203%20—%20Encryption%20in%20Transit%20(TLS).png)
+  ![Task 3 - TLS Execution](EVIDENCE/Task%203%20—%20Encryption%20in%20Transit%20(TLS).png)
 
 #### Terminal Output Captured
 ```text
@@ -183,10 +183,10 @@ aws $EP kms encrypt --key-id $KEY_A --plaintext "$(echo -n 'hello' | base64)" \
 #### Terminal Execution & Evidence
 
 - **CMK Key Creation Metadata:**  
-  ![Task 4 - Master Key Creation](Lab%203/EVIDENCE/Task%204%20—%20Create%20and%20Use%20a%20KMS%20Master%20Key.jpeg)
+  ![Task 4 - Master Key Creation](EVIDENCE/Task%204%20—%20Create%20and%20Use%20a%20KMS%20Master%20Key.jpeg)
 
 - **Direct KMS Encryption:**  
-  ![Task 4 - Direct Encryption](Lab%203/EVIDENCE/Task%204%20—%20%23%20Encrypt%20a%20small%20secret%20directly%20with%20KMS.jpeg)
+  ![Task 4 - Direct Encryption](EVIDENCE/Task%204%20—%20%23%20Encrypt%20a%20small%20secret%20directly%20with%20KMS.jpeg)
 
 #### Captured Master Key Details
 ```json
@@ -229,7 +229,7 @@ echo 'Only the KMS-wrapped data key (datakey.enc) remains.'
 
 #### Terminal Execution & Evidence
 
-![Task 5 - Envelope Encryption](Lab%203/EVIDENCE/Task%205%20—%20Envelope%20Encryption.jpeg)
+![Task 5 - Envelope Encryption](EVIDENCE/Task%205%20—%20Envelope%20Encryption.jpeg)
 
 #### Terminal Output Captured
 ```text
@@ -263,10 +263,10 @@ aws $EP kms decrypt --ciphertext-blob fileb://datakey.enc 2>&1 | head -3
 #### Terminal Execution & Evidence
 
 - **Schedule Deletion & Key State Verification:**  
-  ![Task 6 - Key Deletion Scheduling](Lab%203/EVIDENCE/Task%206%20—%20Per-Tenant%20Keys%20%26%20Cryptographic%20Erasure.png)
+  ![Task 6 - Key Deletion Scheduling](EVIDENCE/Task%206%20—%20Per-Tenant%20Keys%20%26%20Cryptographic%20Erasure.png)
 
 - **Failed Decryption Attempt (Cryptographic Erasure):**  
-  ![Task 6 - Decryption Failure](Lab%203/EVIDENCE/Task%206%20—%20Attempt%20to%20unwrap%20tenant%20A's%20data%20key%20now%20—%20it%20should%20FAIL.png)
+  ![Task 6 - Decryption Failure](EVIDENCE/Task%206%20—%20Attempt%20to%20unwrap%20tenant%20A's%20data%20key%20now%20—%20it%20should%20FAIL.png)
 
 #### Terminal Error Logs Captured
 ```text
@@ -312,7 +312,7 @@ done
 
 #### Terminal Execution & Evidence
 
-![Task 7 - Hashes & Hash Chain](Lab%203/EVIDENCE/Task%207%20—%20Integrity%20%26%20Tamper-Evidence.png)
+![Task 7 - Hashes & Hash Chain](EVIDENCE/Task%207%20—%20Integrity%20%26%20Tamper-Evidence.png)
 
 #### Terminal Output Captured
 ```text
@@ -331,12 +331,12 @@ export data | e1470ccfaf43dcab3c17d5710dc9eacbb7ac65c9f522ca98c2c503431b32da68
 
 | Deliverable Requirement | Screenshot Artifact File | Verified Output / State |
 | :--- | :--- | :--- |
-| **AES Encrypt / Decrypt Confirmation** | [Task 1 - Symmetric Encryption](Lab%203/EVIDENCE/Task%201%20—%20Symmetric%20Encryption%20(Data%20at%20Rest).png)<br>[Task 1 - Decrypt Back](Lab%203/EVIDENCE/Task%201%20-%20%23%20Decrypt%20back.png) | `MATCH: decryption successful` |
-| **RSA Digital Signature Verification** | [Task 2 - Asymmetric Encryption](Lab%203/EVIDENCE/Task%202%20—%20Asymmetric%20Encryption%20%26%20Digital%20Signatures.png) | `Verified OK` |
-| **TLS Encrypted Traffic Request** | [Task 3 - Self Signed Cert](Lab%203/EVIDENCE/Task%203%20-%20%23%20Generate%20a%20self-signed%20certificate.png)<br>[Task 3 - TLS](Lab%203/EVIDENCE/Task%203%20—%20Encryption%20in%20Transit%20(TLS).png) | `Patient: Ahmad, Diagnosis: confidential` via HTTPS |
-| **KMS Master Keys & Envelope Steps** | [Task 4 - KMS Master Key](Lab%203/EVIDENCE/Task%204%20—%20Create%20and%20Use%20a%20KMS%20Master%20Key.jpeg)<br>[Task 5 - Envelope Encryption](Lab%203/EVIDENCE/Task%205%20—%20Envelope%20Encryption.jpeg) | CMK `6bef6f84-667e-4f4c-8efe-3c0cdb7dc0bc`<br>Plaintext DEK deleted from disk |
-| **Failed KMS Decrypt After Erasure** | [Task 6 - Key Deletion](Lab%203/EVIDENCE/Task%206%20—%20Per-Tenant%20Keys%20%26%20Cryptographic%20Erasure.png)<br>[Task 6 - Failed Decrypt](Lab%203/EVIDENCE/Task%206%20—%20Attempt%20to%20unwrap%20tenant%20A's%20data%20key%20now%20—%20it%20should%20FAIL.png) | `aws: [ERROR]: (NotFoundException)` |
-| **Differing Hashes & Hash Chain** | [Task 7 - Integrity](Lab%203/EVIDENCE/Task%207%20—%20Integrity%20%26%20Tamper-Evidence.png) | Differing SHA-256 hashes & 3-stage chain computed |
+| **AES Encrypt / Decrypt Confirmation** | [Task 1 - Symmetric Encryption](EVIDENCE/Task%201%20—%20Symmetric%20Encryption%20(Data%20at%20Rest).png)<br>[Task 1 - Decrypt Back](EVIDENCE/Task%201%20-%20%23%20Decrypt%20back.png) | `MATCH: decryption successful` |
+| **RSA Digital Signature Verification** | [Task 2 - Asymmetric Encryption](EVIDENCE/Task%202%20—%20Asymmetric%20Encryption%20%26%20Digital%20Signatures.png) | `Verified OK` |
+| **TLS Encrypted Traffic Request** | [Task 3 - Self Signed Cert](EVIDENCE/Task%203%20-%20%23%20Generate%20a%20self-signed%20certificate.png)<br>[Task 3 - TLS](EVIDENCE/Task%203%20—%20Encryption%20in%20Transit%20(TLS).png) | `Patient: Ahmad, Diagnosis: confidential` via HTTPS |
+| **KMS Master Keys & Envelope Steps** | [Task 4 - KMS Master Key](EVIDENCE/Task%204%20—%20Create%20and%20Use%20a%20KMS%20Master%20Key.jpeg)<br>[Task 5 - Envelope Encryption](EVIDENCE/Task%205%20—%20Envelope%20Encryption.jpeg) | CMK `6bef6f84-667e-4f4c-8efe-3c0cdb7dc0bc`<br>Plaintext DEK deleted from disk |
+| **Failed KMS Decrypt After Erasure** | [Task 6 - Key Deletion](EVIDENCE/Task%206%20—%20Per-Tenant%20Keys%20%26%20Cryptographic%20Erasure.png)<br>[Task 6 - Failed Decrypt](EVIDENCE/Task%206%20—%20Attempt%20to%20unwrap%20tenant%20A's%20data%20key%20now%20—%20it%20should%20FAIL.png) | `aws: [ERROR]: (NotFoundException)` |
+| **Differing Hashes & Hash Chain** | [Task 7 - Integrity](EVIDENCE/Task%207%20—%20Integrity%20%26%20Tamper-Evidence.png) | Differing SHA-256 hashes & 3-stage chain computed |
 
 ---
 
@@ -416,4 +416,3 @@ docker stop localstack && docker rm localstack
 1. **Software HSM (SoftHSM2) Integration:** Configure SoftHSM using PKCS#11 standard interface to model hardware key protection and sign documents directly inside a cryptoki token.
 2. **HashiCorp Vault Transit Secrets Engine:** Deploy HashiCorp Vault container to handle encryption-as-a-service, automatic key rotation, and Datakey wrapping for microservices architecture.
 3. **Mutual TLS (mTLS):** Enforce bi-directional certificate authentication between client and server containers to prevent unauthorized client connection attempts.
-
